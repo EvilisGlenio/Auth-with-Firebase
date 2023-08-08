@@ -17,7 +17,7 @@ Uma simples página de login, onde estou inplementando a autenticação por meio
 <br>
 
 <p align="center">
-  <img alt="Projeto Auth-with-Firebase" src=".github/preview.jpg" width="100%">
+  <img alt="Projeto Auth-with-Firebase" src="/preview.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
