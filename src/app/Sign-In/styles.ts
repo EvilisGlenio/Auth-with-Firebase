@@ -10,6 +10,10 @@ height: 100vh;
 background-color: #FFC0CB;
 `;
 
+export const WrapperComponent = styled.div`
+  padding: 0.5rem 0;
+`
+
 export const CredentialsCardForm = styled.form`
   display: flex;
   flex-direction: column;
