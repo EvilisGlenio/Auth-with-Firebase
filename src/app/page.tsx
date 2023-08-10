@@ -1,16 +1,24 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useContext,  } from "react";
+import { useRouter } from 'next/navigation'
 import {GoogleAuthProvider, signInWithPopup, User} from 'firebase/auth';
 import { auth } from '../services/firebase';
 import { CredentialsCardForm, GoogleIcon, GoogleIconText, GoogleIconWrapper, InputText, LabelInput, MainContainer, RecuperationPasswordLink, SignInButton, SignInWithGoogle, WrapperComponent } from "./Sign-In/styles";
 import Image from "next/image";
+import { AuthContext, } from "@/context/AuthContext";
 
 
 export default function Home() {
-  const [user, setUser] = useState<User>({} as User);
+  const router = useRouter();
+
+  const {user} = useContext(AuthContext)
+
+  // useEffect(() => {
+  //   router.push('/Sign-In')
+  // }, [])
   
-  function handleSignInWithGoogle(){
+  function handleSignInWithGoogle() {
     const provider = new GoogleAuthProvider();
 
     signInWithPopup(auth, provider)
@@ -24,11 +32,11 @@ export default function Home() {
   
   return (
     <MainContainer>
-          <CredentialsCardForm>
+          {user && <CredentialsCardForm>
             {user.photoURL && <Image src={user.photoURL} alt="Foto de Perfil" width={50} height={50} />}
             <strong>{user.displayName}</strong>
             <small>{user.email}</small>
-          </CredentialsCardForm>
+          </CredentialsCardForm>}
        
           <WrapperComponent>
             <SignInWithGoogle onClick={handleSignInWithGoogle}>
