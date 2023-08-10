@@ -17,6 +17,7 @@ export const WrapperComponent = styled.div`
 export const CredentialsCardForm = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `
 export const InputText = styled.input`
   border: 1px solid #ddd;

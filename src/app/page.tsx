@@ -24,11 +24,11 @@ export default function Home() {
   
   return (
     <MainContainer>
-          <div>
-            {user.photoURL && <Image src={user.photoURL} alt="Foto de Perfil" />}
+          <CredentialsCardForm>
+            {user.photoURL && <Image src={user.photoURL} alt="Foto de Perfil" width={50} height={50} />}
             <strong>{user.displayName}</strong>
             <small>{user.email}</small>
-          </div>
+          </CredentialsCardForm>
        
           <WrapperComponent>
             <SignInWithGoogle onClick={handleSignInWithGoogle}>
