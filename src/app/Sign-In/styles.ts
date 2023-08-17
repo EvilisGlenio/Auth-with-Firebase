@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
@@ -8,7 +9,7 @@ justify-content: center;
 align-items: center;
 height: 100vh;
 background-color: #FFC0CB;
-`;
+`
 
 export const WrapperComponent = styled.div`
   padding: 0.5rem 0;
@@ -66,7 +67,7 @@ export const GoogleIconWrapper = styled.div`
   border-radius: 2px;
   background-color: #fff;
 `
-export const GoogleIcon = styled.img`
+export const GoogleIcon = styled(Image)`
   width: 22px;
   height: 22px;
 `
