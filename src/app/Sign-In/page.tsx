@@ -1,12 +1,11 @@
 'use client'
-import { useContext, useEffect } from "react";
+
 import { CredentialsCardForm, GoogleIcon, GoogleIconText, GoogleIconWrapper, InputText, LabelInput, MainContainer, RecuperationPasswordLink, SignInButton, SignInWithGoogle, WrapperComponent } from "./styles";
-import { useRouter } from "next/navigation";
-import { AuthContext, AuthContextProvider, useAuthContext } from "@/context/AuthContext";
+import { AuthContextProvider, useAuthContext } from "@/context/AuthContext";
 
 export default function SignIn(){
-  const {user, loading, handleSignInWithGoogle} = useAuthContext();
-  const router = useRouter();
+  const { setHandleSignInWithGoogle } = useAuthContext();
+  // const router = useRouter();
 
     // useEffect(() => {
     // router.push("/");
@@ -16,15 +15,16 @@ export default function SignIn(){
       alert('En breve ...')  
     }
 
-    function handleLogout() {
-
+    function button() {
+      alert('Funcionando')
+      console.log("funcionando")
     }
   
   return (
     <AuthContextProvider>
         <MainContainer>
         <CredentialsCardForm>
-          <WrapperComponent>
+          {/* <WrapperComponent>
             <LabelInput htmlFor="email">E-mail:</LabelInput>
             <InputText type="email" name="email" id="email" />
           </WrapperComponent>
@@ -37,11 +37,11 @@ export default function SignIn(){
           </WrapperComponent>
 
           <RecuperationPasswordLink href="/">Esqueceu a senha?</RecuperationPasswordLink>
-          
+           */}
           <WrapperComponent>
-            <SignInWithGoogle onClick={handleSignInWithGoogle}>
+            <SignInWithGoogle onClick={() => setHandleSignInWithGoogle(false)}>
               <GoogleIconWrapper>
-              <GoogleIcon rel="preload" src="https://www.vectorlogo.zone/logos/google/google-icon.svg" width={22} height={22} alt='...'/>
+                <GoogleIcon src="https://www.vectorlogo.zone/logos/google/google-icon.svg" width={22} height={22} alt='...'/>
               </GoogleIconWrapper>
               <GoogleIconText>Entrar com o Google</GoogleIconText>
             </SignInWithGoogle>

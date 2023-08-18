@@ -8,11 +8,11 @@ import { useEffect } from 'react';
 
 export default function Home() {
   const router = useRouter();
-  const {user, loading} = useAuthContext();
+  const {user} = useAuthContext();
 
-  useEffect(() => {
-    router.push("/Sign-In")
-  }, [loading == null])
+  // useEffect(() => {
+  //   router.push("/Sign-In")
+  // }, [loading == null])
 
   return (
     <MainContainer>

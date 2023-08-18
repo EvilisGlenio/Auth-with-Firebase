@@ -56,7 +56,7 @@ export const SignInWithGoogle = styled.button`
   border-radius: 2px;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
   cursor: pointer;
-  color:white;
+  color: white;
 `
 export const GoogleIconWrapper = styled.div`
   display: flex;
@@ -68,8 +68,7 @@ export const GoogleIconWrapper = styled.div`
   background-color: #fff;
 `
 export const GoogleIcon = styled(Image)`
-  width: 22px;
-  height: 22px;
+
 `
 export const GoogleIconText = styled.p`
   padding: 1.8rem;
